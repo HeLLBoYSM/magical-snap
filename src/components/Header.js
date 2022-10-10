@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import CameraAltTwoToneIcon from '@mui/icons-material/CameraAltTwoTone';
 
-const pages = ['Booking', 'Blog'];
+const pages = ['Booking', 'Blog','About Me'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
