@@ -12,8 +12,16 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import CameraAltTwoToneIcon from '@mui/icons-material/CameraAltTwoTone';
+import { Link } from 'react-router-dom'
+import styled from '@emotion/styled';
 
-const pages = ['Booking', 'Blog','About Me'];
+const ButtonLink = styled(Link)(() => ({
+  color: 'inherit',
+  textDecoration: 'none',
+  marginLeft: 10
+}))
+
+// const pages = ['Booking',"Products", 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
@@ -87,11 +95,24 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+
+              <MenuItem >
+                <ButtonLink to='/products-page'>
+                  <Typography> Products</Typography>
+                </ButtonLink>
+              </MenuItem>
+              <MenuItem >
+                <ButtonLink to='/booking-page'>
+                  <Typography>Booking</Typography>
+                </ButtonLink>
+              </MenuItem>
+              <MenuItem >
+                <ButtonLink to='/blog-page'>
+                  <Typography>Blog</Typography>
+                </ButtonLink>
+              </MenuItem>
+
+
             </Menu>
           </Box>
           <CameraAltTwoToneIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -99,7 +120,7 @@ const ResponsiveAppBar = () => {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -114,15 +135,17 @@ const ResponsiveAppBar = () => {
             Magical Snap
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+            <ButtonLink to='/products-page'>
+              <Typography>Products</Typography>
+            </ButtonLink>
+            <ButtonLink to='/booking-page'>
+              <Typography>Booking</Typography>
+            </ButtonLink>
+            <ButtonLink to='/blog-page'>
+              <Typography>Blog</Typography>
+            </ButtonLink>
+
+
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

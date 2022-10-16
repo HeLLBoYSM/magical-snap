@@ -1,23 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Cards from './components/Cards';
-import CardsContainer from './components/CardsContainer';
-import WelcomeCard from './components/WelcomeCard';
-import WelcomeCardContainer from './components/WelcomeCardContainer';
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import BlogPage from './blogPage/BlogPage';
+import BookingPage from './booking/BookingPage';
+import Layout from './components/Layout'
+import HomePage from './homePage/HomePage';
+import ProductsPage from './productsPage/ProductsPage'
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <Header />
-    <WelcomeCardContainer><WelcomeCard></WelcomeCard></WelcomeCardContainer>
-    <CardsContainer><Cards></Cards></CardsContainer>
-    <Footer />
-  </React.StrictMode>
+  <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Layout><HomePage></HomePage></Layout>}></Route>
+      <Route path='/products-page' element={<Layout><ProductsPage></ProductsPage></Layout>}></Route>
+      <Route path='/blog-page' element={<Layout><BlogPage></BlogPage></Layout>}></Route>
+      <Route path='booking-page' element={<Layout><BookingPage></BookingPage></Layout>}></Route>
+    </Routes>
+  </BrowserRouter>
+
 );
 
 
