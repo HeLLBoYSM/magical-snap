@@ -61,7 +61,7 @@ export default function MultiActionAreaCard() {
           component="img"
           height="140"
           image="./images/magical-snap4.png"
-          alt="green iguana"
+          alt="Adult Models"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
